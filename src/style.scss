@@ -1,0 +1,93 @@
+$main-background-color: #464660;
+$secondary-background-color: #368B85;
+$additional-color: #B4B897;
+$main-text-color: #F1E9E5;
+
+* {
+  color: $main-text-color;
+}
+
+.users {
+  display: flex;
+  margin-top: 50px;
+
+  &-checkbox {
+    cursor: pointer;
+  }
+  
+  &-list {
+    width: 68%;
+    margin-left: 1%;
+    margin-right: 1%;
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    gap: 2px 2px;
+    border-radius: 6px;
+    background-color: $main-background-color;
+  }
+
+  &-list__letter-section {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 15px;
+    padding-left: 20px;
+    background-color: $additional-color;
+    border-radius: 4px;  
+  }
+
+  &-list__user-wrapper {
+    border-radius: 4px;
+    background-color: $secondary-background-color;
+    margin: 8px;
+    padding: 5px;
+  }
+
+  &-list-letter-marker {
+    background-color: $secondary-background-color;
+    font-size: 18px;
+    border-radius: 4px;
+    padding-left: 10px;
+    max-width: 30px;
+  }
+
+  &-list__name-active {
+    color: blue;
+  }
+
+  &-selected-empty {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &-list__no-b-days-msg {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &-list__selected-user {
+    font-size: 16px;
+    margin-left: 30px;
+    padding-bottom: 5px;
+  }
+  &-selected-list {
+    width: 28%;
+    margin-right: 2%;
+    border-radius: 6px;
+    background-color: $main-background-color;
+
+    &-header {
+      text-align: center;
+      padding: 10px;
+      font-size: 25px;
+    }
+  }
+
+  &-list__month-header {
+    font-size: 18px;
+    text-align: center;
+    color: $secondary-background-color;
+    margin-bottom: 10px;
+  }
+}
