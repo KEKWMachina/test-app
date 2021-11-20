@@ -72,6 +72,9 @@ function App() {
               </div>
             </div>
           </Route>
+          <Route path="*">
+            <Redirect to="/employees" />
+          </Route>
         </Switch>
       </Router>
     </div>
