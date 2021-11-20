@@ -43,7 +43,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <Router>
+    <Router basename="/test-app">
       <Switch>
         <Route exact path="/">
           <Redirect to="/employees" />
