@@ -41,13 +41,11 @@ function App() {
   useEffect(() => {
     dispatch(getUsersData({}));
     dispatch(retrieveStorage({}));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
-
 
   return (
     <div className="App">
-      <Router>
+      <Router basename="/test-app">
         <Switch>
           <Route exact path="/">
             <Redirect to="/employees" />
