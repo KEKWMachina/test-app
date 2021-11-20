@@ -8,8 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getUsersData } from "./redux/usersSlice";
 import { retrieveStorage } from "./redux/selectedUsersSlice";
-import UsersSection from "./components/users-sections";
-import Months from "./components/months";
+import MainContent from "./components/main-content";
 
 function App() {
   const users = useSelector((state) => state.users);
@@ -44,40 +43,19 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="App">
-      <Router basename="/test-app">
-        <Switch>
-          <Route exact path="/">
-            <Redirect to="/employees" />
-          </Route>
-          <Route exact path="/employees">
-            <div className="users">
-              <div className="users-list">
-                {users.length !== 0 &&
-                  alphabet.map((letter, index) => (
-                    <UsersSection letter={letter} key={index} />
-                  ))}
-              </div>
-              <div className="users-selected-list">
-                <div className="users-selected-list-header">Birthdays</div>
-                {selectedUsers.length !== 0 ? (
-                  months.map((month, index) => (
-                    <Months month={month} key={index} users={selectedUsers} />
-                  ))
-                ) : (
-                  <div className="users-selected-empty">
-                    Employees List is empty
-                  </div>
-                )}
-              </div>
-            </div>
-          </Route>
-          <Route path="*">
-            <Redirect to="/employees" />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/employees" />
+        </Route>
+        <Route exact path="/employees">
+          <MainContent users={users} alphabet={alphabet} selectedUsers={selectedUsers} months={months} />
+        </Route>
+        <Route path="*">
+          <Redirect to="/employees" />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
